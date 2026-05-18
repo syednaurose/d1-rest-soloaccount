@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "d1-rest-soloaccount",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "soloaccount",
+          "database_id": "ad4e1907-9d28-4f85-8808-97c3783b24bd"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "bda152dd21bf4693932f93cce1ff4534",
+            "binding": "SECRET",
+            "secret_name": "soloaccount"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
